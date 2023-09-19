@@ -22,6 +22,6 @@ fig, ax = mpf.plot(ds,
                    returnfig=True
                    )
 
-st.pyplot(fig)
-#st.dataframe(ds)
+#st.pyplot(fig)
+st.dataframe(ds)
 
