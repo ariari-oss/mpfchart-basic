@@ -8,6 +8,8 @@ st.title("basic chart")
 st.text("銘柄コードを入力してください。")
 aa = st.text_input("","^N225")
 
+st.markdown('---')
+
 
 if aa:
     ds = yf.download(aa).tail(100)
@@ -25,5 +27,6 @@ if aa:
                     )
 
     st.pyplot(fig)
+    st.markdown('---')
     st.dataframe(ds)
 
