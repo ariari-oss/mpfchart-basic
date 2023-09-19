@@ -7,21 +7,23 @@ import yfinance as yf
 st.title("basic chart")
 st.text("銘柄コードを入力してください。")
 aa = st.text_input("","^N225")
-ds = yf.download(aa).tail(100)
 
 
-fig, ax = mpf.plot(ds,
-                   title=aa,
-                   type="candle",
-                   volume=True,
-                   mav=[5,10,60],
-                   figratio=[2,1],
-                   style="yahoo",
+if aa:
+    ds = yf.download(aa).tail(100)
+
+    fig, ax = mpf.plot(ds,
+                    title=aa,
+                    type="candle",
+                    volume=True,
+                    mav=[5,10,60],
+                    figratio=[2,1],
+                    style="yahoo",
 
 
-                   returnfig=True
-                   )
+                    returnfig=True
+                    )
 
-#st.pyplot(fig)
-st.dataframe(ds)
+    st.pyplot(fig)
+    st.dataframe(ds)
 
