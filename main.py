@@ -21,8 +21,6 @@ if aa:
                     mav=[5,10,60],
                     figratio=[2,1],
                     style="yahoo",
-
-
                     returnfig=True
                     )
 
